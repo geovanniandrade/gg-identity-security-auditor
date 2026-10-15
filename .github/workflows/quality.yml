@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: '22'
       - name: Validate pages, examples and exam
-        run: python3 tests/check_static.py
+        run: python3 tests/check_static.py\n      - name: Identity CSV regression tests\n        run: node tests/test_identity_csv.cjs

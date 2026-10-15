@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict');
+const {parse}=require('../assets/identity-csv.js');
+const h='User,Enabled,LastLogonDays,IsAdmin';
+assert.equal(parse(h+'\nlab.user,True,12,False\n').length,1);
+assert.equal(parse(h+'\nlab.user,True,12,False\n')[0].enabled,'True');
+assert.equal(parse('User;Enabled;LastLogonDays;IsAdmin\nlab.user;False;;False\n')[0].user,'lab.user');
+const quoted=parse('User,Enabled,LastLogonDays,IsAdmin,PrivilegedGroups\n"lab,teste",True,12,False,"Admins, Operadores"');
+assert.equal(quoted[0].user,'lab,teste');
+assert.equal(quoted[0].privilegedgroups,'Admins, Operadores');
+assert.equal(parse(h+'\n"linha\nlonga",True,12,False')[0].user,'linha\nlonga');
+assert.throws(()=>parse(''),/vazio/);
+assert.throws(()=>parse('User,Enabled\nx,True'),/Coluna obrigatória/);
+assert.throws(()=>parse(h+'\nx,True,12'),/esperado 4/);
+assert.throws(()=>parse(h+'\nx,maybe,12,False'),/Enabled|enabled/);
+assert.throws(()=>parse(h+'\nx,True,abc,False'),/lastlogondays/);
+assert.throws(()=>parse(h+'\nx,True,12,False,extra'),/esperado 4/);
+assert.throws(()=>parse(h+'\n"broken,True,12,False'),/aspas/);
+console.log('OK 11 parser regression checks');

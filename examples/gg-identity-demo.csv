@@ -1,0 +1,4 @@
+User,Enabled,LastLogonDays,IsAdmin,PrivilegedGroups,PasswordNeverExpires,PasswordNotRequired,LockedOut,CreatedDate,PasswordAgeDays
+lab.user,true,12,false,,false,false,false,2025-09-10,30
+lab.admin,true,150,true,Domain Admins,true,false,false,2024-02-01,240
+lab.disabled,false,200,false,,false,false,false,2023-11-01,210

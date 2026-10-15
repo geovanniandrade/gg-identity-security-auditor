@@ -30,6 +30,15 @@ Uma conta administrativa fictícia permanece ativa sem logon recente e é indica
 
 Ao clicar nos indicadores de contas, o relatório mostra os usuários correspondentes do CSV, com filtros de contas e logon antigo. As verificações de políticas de senha, lockout, MFA, grupos aninhados e privilégios efetivos ainda aparecem como **não avaliadas**: o coletor atual não disponibiliza evidências suficientes para confirmá-las. Não publique o CSV ou PDF com usuários corporativos em repositórios públicos.
 
+## 🧩 Coletor v2 (escopo autorizado)
+
+O [Export-IdentityAudit-v2.ps1](collector/Export-IdentityAudit-v2.ps1) permite restringir o escopo pela OU com o parâmetro `-SearchBase`. Gera:
+
+- `gg-identity-audit-v2.csv`: usuários, conta habilitada, logon aproximado, flags de senha, bloqueio, criação, idade da senha e associação a alguns grupos privilegiados.
+- `gg-domain-policy.json`: resumo da política de senha padrão do domínio, para revisão **separada**. Não avalia FGPP/GPO efetiva.
+
+O aplicativo web interpreta as novas colunas do CSV. Dados de AD devem permanecer em fluxo corporativo autorizado. O script continua não assinado; não contorne políticas de execução.
+
 ## 📌 Próximas melhorias
 
 Adicionar verificações de grupos e permissões, com coleta AD somente leitura e testes controlados.

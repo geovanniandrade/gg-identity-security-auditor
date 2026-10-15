@@ -8,11 +8,17 @@ Auditoria inicial de identidades com registros exportados de forma autorizada.
 
 Contagem de contas, sinalização de contas ativas sem logon há mais de 90 dias e revisão de administradores.
 
+## 🧪 Demonstração e uso corporativo
+
+- **Demonstração:** clique em **Carregar exemplo fictício** ou baixe o CSV de demonstração na interface.
+- **Uso corporativo autorizado:** o [coletor PowerShell somente leitura](collector/Export-IdentityAudit.ps1) exporta o formato esperado a partir do AD, mas exige módulo ActiveDirectory, permissão de consulta, revisão e aprovação da equipe. Não contorne políticas de execução.
+- **Atenção:** `LastLogonDate` pode não ser preciso; `IsAdmin` verifica apenas associação direta a um conjunto limitado de grupos, não privilégios efetivos.
+
 ## 🚀 Como utilizar
 
 1. Prepare um CSV com `User,Enabled,LastLogonDays,IsAdmin`.
 2. Importe o arquivo na interface web.
-3. Revise contas com logon antigo e contas marcadas como administrativas; gere o resumo em PDF.
+3. Revise contas com logon antigo e contas marcadas como administrativas; abra o relatório em tela separada e salve como PDF.
 
 ## 🧪 Exemplo prático
 

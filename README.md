@@ -26,6 +26,10 @@ Uma conta administrativa fictícia permanece ativa sem logon recente e é indica
 
 > **Status:** versão MVP educacional, com processamento local no navegador e sem backend próprio. Não homologada para produção. Não envie dados corporativos confidenciais nem considere a saída como diagnóstico definitivo.
 
+## 🔍 Interpretação do relatório
+
+Ao clicar nos indicadores de contas, o relatório mostra os usuários correspondentes do CSV, com filtros de contas e logon antigo. As verificações de políticas de senha, lockout, MFA, grupos aninhados e privilégios efetivos ainda aparecem como **não avaliadas**: o coletor atual não disponibiliza evidências suficientes para confirmá-las. Não publique o CSV ou PDF com usuários corporativos em repositórios públicos.
+
 ## 📌 Próximas melhorias
 
 Adicionar verificações de grupos e permissões, com coleta AD somente leitura e testes controlados.

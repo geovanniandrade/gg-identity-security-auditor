@@ -60,3 +60,15 @@ Adicionar verificações de grupos e permissões, com coleta AD somente leitura 
 **Fluxo recomendado:** usar o exemplo fictício → revisar os resultados → abrir relatório → salvar PDF apenas após conferir o conteúdo. Em ambientes reais, verificar autorização, origem dos dados e precisão das conclusões. Nunca incluir inventário, nomes reais de usuários ou dados sensíveis em issues e repositórios públicos.
 
 **Limites:** ferramentas de triagem, não substituem avaliação profissional nem comprovam conformidade. As validações executadas e pendentes estão em [QUALITY.md](QUALITY.md).
+
+
+## 🔧 Qualidade, segurança e evolução
+
+[![Static quality checks](https://github.com/geovanniandrade/gg-identity-security-auditor/actions/workflows/quality.yml/badge.svg)](https://github.com/geovanniandrade/gg-identity-security-auditor/actions/workflows/quality.yml)
+
+- [Política de segurança](SECURITY.md)
+- [Histórico de mudanças](CHANGELOG.md)
+- [Plano de engenharia e critérios para 1.0](docs/engineering.md)
+- [Workflow e testes](.github/workflows/quality.yml)
+
+**Status atual:** MVP em validação. O workflow verifica aspectos estáticos e não comprova funcionamento corporativo ou homologação.

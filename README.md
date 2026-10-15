@@ -46,3 +46,17 @@ Adicionar verificações de grupos e permissões, com coleta AD somente leitura 
 ---
 
 **GG // Security Applications** · Segurança acessível, investigação responsável e resultados verificáveis.
+
+
+---
+## 🧭 Navegação e demonstração
+
+- [🌐 Interface web](https://geovanniandrade.github.io/gg-identity-security-auditor/)
+- [📋 Checklist de qualidade, testes e limitações](QUALITY.md)
+- [🧪 Exemplo fictício para demonstração](examples/gg-identity-demo.csv)
+
+**Identidade visual:** Roxo. **Versão:** MVP 0.2 (identificador documental; não significa homologação).
+
+**Fluxo recomendado:** usar o exemplo fictício → revisar os resultados → abrir relatório → salvar PDF apenas após conferir o conteúdo. Em ambientes reais, verificar autorização, origem dos dados e precisão das conclusões. Nunca incluir inventário, nomes reais de usuários ou dados sensíveis em issues e repositórios públicos.
+
+**Limites:** ferramentas de triagem, não substituem avaliação profissional nem comprovam conformidade. As validações executadas e pendentes estão em [QUALITY.md](QUALITY.md).
